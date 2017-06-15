@@ -3,11 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hangman Game</title>
-	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<script type="text/javascript" src="javascript/game.js"></script>
 </head>
-<body>
-	
+<body id="background_image">
+	<div class="container">
+		<div class="row">
+			<h1>Walt Disney Style Hangman</h1>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row background">
+					<h2><strong>Fun Fact: </strong></h2>
+					<p id="fun_fact"></p>
+				</div>
+				<div class="row background">
+					<h2><strong>Audio: </strong></h2>
+					<p id="audio"></p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row background">
+					<h2><strong>Press Any Key To Get Started!</strong></h2>
+					<p><strong>Wins: </strong><br><span id="wins">0</span></p>
+					<p><strong>Current Word: </strong><br><span id="current_word"></span></p>
+					<p><strong>Number of Guesses Remaining: </strong><br><span id="remaining_guesses">12</span></p>
+					<p><strong>Letters Already Guessed: </strong><br><span id="guesses"></span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
