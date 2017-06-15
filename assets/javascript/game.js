@@ -10,7 +10,7 @@ function greetings() {
 
 greetings()
 
-var allSolutions = ["aladdin", "thelionking", "frozen", "mulan", "beautyandthebeast", "cinderella", "thelittlemermaid", "tangled", "up", "findingdory", "findingnemo", "despicableme", "moana", "liloandstitch", "zootopia", "toystory", "monstersinc"];
+var allSolutions = ["aladdin", "the lion king", "frozen", "mulan", "beauty and the beast", "cinderella", "the little mermaid", "tangled", "up", "finding dory", "finding nemo", "despicable me", "moana", "lilo and stitch", "zootopia", "toy story", "monsters inc"];
 var audioImageFact = {
 	up: ["<iframe width='100%' height='300' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/117267971&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>", "url('assets/images/picture_1.jpg')", "There are 10,286 balloons attached to the house in Up."], 
 	findingDory: ["<iframe width='100%' height='300' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/154004102&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>", "url('assets/images/picture_2.jpg')", "A character from Inside Out also makes an appearance in Finding Dory."], 
@@ -27,7 +27,7 @@ function reset() {
 	console.log(solution)
 	solutionCharacters = solution.split("");
 	currentWord = Array(solution.length).fill("_");
-	theme = Object.values(audioImageFact)[Math.floor(Math.random() * Object.keys(audioImageFact).length)]
+	theme = Object.values(audioImageFact)[Math.floor(Math.random() * Object.keys(audioImageFact).length)];
 	document.getElementById("current_word").innerHTML = currentWord.join(" ");
 	document.getElementById("remaining_guesses").innerHTML = lives;
 	document.getElementById("guesses").innerHTML = allUserGuesses.join(", ");
