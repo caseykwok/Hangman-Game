@@ -18,6 +18,10 @@ var audioImageFact = {
 	despicableMe: ["<iframe width='100%' height='300' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/99800401&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>", "url('assets/images/picture_4.jpg')", "The average Minion stands at 105cm in height."], 
 	moana: ["<iframe width='100%' height='300' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/314001417&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>", "url('assets/images/picture_5.jpg')", "Flounder from The Little Mermaid and Olaf from Frozen both appear in the film Moana."]
 }
+// need audioImageFactValues because Object.values() does not work in Safari
+var audioImageFactValues = Object.keys(audioImageFact).map(function(key) {
+		return audioImageFact[key];
+	})
 var wins = 0;
 
 function reset() {
@@ -27,7 +31,8 @@ function reset() {
 	console.log(solution)
 	solutionCharacters = solution.split("");
 	currentWord = Array(solution.length).fill("_");
-	theme = Object.values(audioImageFact)[Math.floor(Math.random() * Object.keys(audioImageFact).length)];
+	// theme = Object.values(audioImageFact)[Math.floor(Math.random() * Object.keys(audioImageFact).length)];
+	theme = audioImageFactValues[Math.floor(Math.random() * Object.keys(audioImageFact).length)];
 	document.getElementById("current_word").innerHTML = currentWord.join(" ");
 	document.getElementById("remaining_guesses").innerHTML = lives;
 	document.getElementById("guesses").innerHTML = allUserGuesses.join(", ");
